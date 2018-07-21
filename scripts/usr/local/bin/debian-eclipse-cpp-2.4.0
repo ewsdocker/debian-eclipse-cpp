@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 2.0.1
+# @version 2.4.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -46,5 +46,5 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace-cpp-photon:/workspace \
-           --name=debian-eclipse-cpp-2.0.0 \
-       ewsdocker/debian-eclipse-cpp:2.0.0
+           --name=debian-eclipse-cpp-2.4.0 \
+       ewsdocker/debian-eclipse-cpp:2.4.0
