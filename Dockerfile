@@ -2,13 +2,13 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for eclipse-cpp-oxygen-3a
+#	  Dockerfile for eclipse-cpp-photon
 #		in a Debian docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.0.0
+# @version 2.0.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -51,8 +51,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # 	  Eclipse repository address
 #
 # =========================================================================
-ENV ECLIPSE_RELEASE=oxygen 
-ENV ECLIPSE_VERS=3a 
+ENV ECLIPSE_RELEASE=phton 
+ENV ECLIPSE_VERS=R 
 ENV ECLIPSE_IDE=cpp 
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
@@ -64,7 +64,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="1.0.0"
+ENV LMSBUILD_VERSION="2.0.0"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
