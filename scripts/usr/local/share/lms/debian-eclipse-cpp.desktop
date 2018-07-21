@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.1 debian-eclipse-cpp-1.0.0
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.1 debian-eclipse-cpp-1.4.0
 Icon=/home/jay/.local/share/icons/gcc-sm.png
 Type=Application
 Terminal=false
-GenericName=Eclipse-C++
-Name=EclipseC++
+GenericName=Eclipse-oxygen C++
+Name=Eclipse-oxygen C++
 StartupNotify=false
 Categories=Development

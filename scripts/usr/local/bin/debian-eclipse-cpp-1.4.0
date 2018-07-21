@@ -45,6 +45,6 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.config/docker/eclipse/cpp:/root \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-cpp:/workspace \
-           --name=debian-eclipse-cpp-1.0.0 \
-       ewsdocker/debian-eclipse-cpp:1.0.0
+           -v /media/dev-2018/workspace-cpp-oxygen:/workspace \
+           --name=debian-eclipse-cpp-1.4.0 \
+       ewsdocker/debian-eclipse-cpp:1.4.0
