@@ -51,7 +51,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # 	  Eclipse repository address
 #
 # =========================================================================
-ENV ECLIPSE_RELEASE=phton 
+ENV ECLIPSE_RELEASE=photon 
 ENV ECLIPSE_VERS=R 
 ENV ECLIPSE_IDE=cpp 
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
