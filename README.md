@@ -1,6 +1,6 @@
 ## ewsdocker/debian-eclipse-cpp  
 
-__Eclipse C++ in a Debian Docker image.__  
+__Eclipse Photon C++ in a Debian Docker image.__  
 
 ## NOTE
 
