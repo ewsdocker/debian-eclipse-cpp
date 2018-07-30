@@ -1,43 +1,120 @@
 ## ewsdocker/debian-eclipse-cpp  
 
-__Eclipse C++ in a Debian Docker image.__  
+**Eclipse IDE for C++ Development Tools (CDT) in a Debian-based Docker image.**  
 
-## NOTE
-
-**ewsdocker/debian-eclipse-cpp** is designed to be used on a Linux system configured to support **Docker** __user namespace__s.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
+Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 
 ____  
 
-## ewsdocker/debian-eclipse-cpp Wiki  
-
-Please visit our [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart) for complete documentation of this docker image.  
+**NOTE**  
+**ewsdocker/debian-eclipse-cpp** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-eclipse-cpp** on a system not configured for **Docker user namespaces**.
 ____  
 
-### About Docker Versions  
+**ewsdocker/debian-eclipse-cpp Wiki**  
 
-Find out all that you need to know about the docker Tags, and the version of Eclipse C++ represented, at [Docker Tags](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/DockerTags).  
-_____________________  
+Please visit the [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart) for complete documentation of this docker image.  
+____  
 
-**docker pull** will pull the **latest** image by default.  
+**Installing ewsdocker/debian-eclipse-cpp**  
 
-The Docker **edge** tag is based on the GitHub **master** source, which is the development version, and should be assumed to be **unstable**.  
+The following scripts will download the the selected **ewsdocker/debian-eclipse-cpp** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
 
-Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-eclipse-cpp/tags/) page. 
+The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping)),  
 
-GitHub source branches and tags, if there are any, can be selected in the **Branch / Tag** selection box.  
+**ewsdocker/debian-eclipse-cpp:photon-9.5.0**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.0:/root \
+               --name=debian-eclipse-cpp-photon-9.5.0 \
+           ewsdocker/debian-eclipse-cpp:photon-9.5.0 lms-setup  
 
-NOTE: If the _New Version_ version number is not in the **Tags**, the **latest** tag is still under test.  Testing will be complete when the _New Version_ tag exists.
+____  
+  
+**ewsdocker/debian-eclipse-cpp:oxygen-9.5.0**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.0:/root \
+               --name=debian-eclipse-cpp-oxygen-9.5.0 \
+           ewsdocker/debian-eclipse-cpp:oxygen-9.5.0 lms-setup  
 
-An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki).
-____
+____  
 
-### Overview  
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of **lms-setup** and what it does.  
 
-**ewsdocker/debian-eclipse-cpp** is built upon **ewsdocker/debian-openjre:latest** and provides the current _Eclipse ++_ version in a Docker image.  
+____  
 
-### Wiki  
+**Running the installed scripts**
 
-For more information on **ewsdocker/debian-eclipse-cpp**, visit the [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki).  
+After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
+
++ the executable scripts have been copied to **~/bin**;  
++ the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
++ the associated **debian-eclipse-cpp-"branch"-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
+
+____  
+
+**Executable scripts**  
+
+**ewsdocker/debian-eclipse-cpp:photon-9.5.0**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace:/workspace \
+               -v ${HOME}/git/ewsdocker:/project \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.0:/root \
+               --name=debian-eclipse-cpp-photon-9.5.0 \
+          ewsdocker/debian-eclipse-cpp:photon-9.5.0  
+
+**ewsdocker/debian-eclipse-cpp:oxygen-9.5.0**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace:/workspace \
+               -v ${HOME}/git/ewsdocker:/project \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.0:/root \
+               --name=debian-eclipse-cpp-oxygen-9.5.0 \
+           ewsdocker/debian-eclipse-cpp:oxygen-9.5.0  
+
+____  
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
+
+____  
+
+**Persistence**  
+In order to persist the Eclipse application state, a location on the docker _host_ must be provided to store the necessary information.  This can be accomplished with the following volume option in the run command:
+
+    -v ${HOME}/.config/docker/debian-eclipse-cpp-"branch"-"version":/root  
+
+Since the information is stored in the docker _container_ **/root** directory, this statement maps the user's **~/.config/docker/debian-eclipse-cpp-"branch"-"version"** docker _host_ directory to the **/root** directory in the docker _container_.  
+____  
+**Timestamps**  
+It is important to keep the time and date on docker _host_ files that have been created and/or modified by the docker _containter_ synchronized with the docker _host_'s settings. This can be accomplished as follows:
+
+    -v /etc/localtime:/etc/localtime:ro  
+
+____  
+**About the X11 Server / GUI Stack**  
+The **ewsdocker/debian-eclipse-cpp** image is built on the [ewsdocker/debian-openjre](https://github.com/ewsdocker/debian-openjre/wiki) docker image, which is built on the [ewsdocker/debian-base-gui](https://github.com/ewsdocker/debian-base-gui/wiki) docker image. These two docker images provide the **X11-Server** stack and several **GUI** system elements.  The **X11-Server** stack is configured in the _docker run_ command as follows:
+
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+
+Since these options are _the same for all gui containers_, they should probably be the first options in the docker run command.  
 
 ____  
 
@@ -59,4 +136,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with **ewsdocker/debian-eclipse-cpp**.  If not, see 
 <http://www.gnu.org/licenses/>.  
-____  
+
