@@ -47,19 +47,6 @@ ____
 
 ____  
 
-**ewsdocker/debian-eclipse-cpp:1.1.10**  
-  
-    docker run --rm \
-               -v ${HOME}/bin:/userbin \
-               -v ${HOME}/.local:/usrlocal \
-               -e LMS_BASE="${HOME}/.local" \
-               -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-cpp-1.1.10:/root \
-               --name=debian-eclipse-cpp-1.1.10 \
-           ewsdocker/debian-eclipse-cpp:1.1.10 lms-setup  
-
-____  
-
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of **lms-setup** and what it does.  
 
 ____  
@@ -102,18 +89,6 @@ ____
                --name=debian-eclipse-cpp-oxygen-9.5.0 \
            ewsdocker/debian-eclipse-cpp:oxygen-9.5.0  
 
-**ewsdocker/debian-eclipse-cpp:1.1.10**
-  
-    docker run -e DISPLAY=unix${DISPLAY} \
-               -v /tmp/.X11-unix:/tmp/.X11-unix \
-               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-               -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/source:/source \
-               -v ${HOME}/workspace:/workspace \
-               -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-cpp-1.1.10:/root \
-               --name=debian-eclipse-cpp-1.1.10 \
-           ewsdocker/debian-eclipse-cpp:1.1.10  
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
 
