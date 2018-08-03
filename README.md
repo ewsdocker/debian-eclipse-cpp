@@ -6,13 +6,16 @@ Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** 
 
 ____  
 
+**A Docker pre-built image is available from [ewsdocker/debian-eclipse-cpp](https://hub.docker.com/r/ewsdocker/debian-eclipse-cpp).**  
+
+____  
+
 **NOTE**  
 **ewsdocker/debian-eclipse-cpp** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-eclipse-cpp** on a system not configured for **Docker user namespaces**.
 ____  
 
-**ewsdocker/debian-eclipse-cpp Wiki**  
+**Visit the [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart) for complete documentation of this docker image.**  
 
-Please visit the [ewsdocker/debian-eclipse-cpp Wiki](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart) for complete documentation of this docker image.  
 ____  
 
 **Installing ewsdocker/debian-eclipse-cpp**  
@@ -91,6 +94,64 @@ ____
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
+
+____  
+
+**Regarding photon-edge and oxygen-edge**  
+
+For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
+
+**ewsdocker/debian-eclipse-cpp:photon-edge**  
+<ul>
+
+**photon-edge** is the development tag for the **9.5.1** release tag.
+
+    docker pull ewsdocker/debian-eclipse-cpp:photon-edge
+    docker tag ewsdocker/debian-eclipse-cpp:photon-edge ewsdocker/debian-eclipse-cpp:photon-9.5.1
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.1:/root \
+               --name=debian-eclipse-cpp-photon-9.5.1 \
+           ewsdocker/debian-eclipse-cpp:photon-9.5.1 lms-setup  
+
+optional step:
+
+    docker rmi ewsdocker/debian-eclipse-cpp:photon-edge  
+
+To create and run the container, run **Eclipse CDT photon-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+
+    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:photon-9.5.1  
+
+</ul>  
+
+**ewsdocker/debian-eclipse-cpp:oxygen-edge**  
+<ul>
+
+**oxygen-edge** is the development tag for the **9.5.1** release tag.
+
+    docker pull ewsdocker/debian-eclipse-cpp:oxygen-edge
+    docker tag ewsdocker/debian-eclipse-cpp:oxygen-edge ewsdocker/debian-eclipse-cpp:oxygen-9.5.1
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.1:/root \
+               --name=debian-eclipse-cpp-oxygen-9.5.1 \
+           ewsdocker/debian-eclipse-cpp:oxygen-9.5.1 lms-setup  
+
+optional step:
+
+    docker rmi ewsdocker/debian-eclipse-cpp:oxygen-edge  
+
+To create and run the container, run **Eclipse CDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+
+    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:oxygen-9.5.1  
+
+</ul>  
 
 ____  
 
