@@ -102,7 +102,6 @@ ____
 For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
 
 **ewsdocker/debian-eclipse-cpp:photon-edge**  
-<ul>
 
 **photon-edge** is the development tag for the **9.5.1** release tag.
 
@@ -125,10 +124,9 @@ To create and run the container, run **Eclipse CDT photon-9.5.1** from the _Prog
 
     ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:photon-9.5.1  
 
-</ul>  
+____  
 
 **ewsdocker/debian-eclipse-cpp:oxygen-edge**  
-<ul>
 
 **oxygen-edge** is the development tag for the **9.5.1** release tag.
 
@@ -143,15 +141,15 @@ To create and run the container, run **Eclipse CDT photon-9.5.1** from the _Prog
                --name=debian-eclipse-cpp-oxygen-9.5.1 \
            ewsdocker/debian-eclipse-cpp:oxygen-9.5.1 lms-setup  
 
+
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-cpp:oxygen-edge  
+  
 
 To create and run the container, run **Eclipse CDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
     ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:oxygen-9.5.1  
-
-</ul>  
 
 ____  
 
