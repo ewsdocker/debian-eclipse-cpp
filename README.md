@@ -1,12 +1,12 @@
-## ewsdocker/debian-eclipse-cpp  
+## ewsdocker/debian-eclipse-cpp:9.5.1  
 
-**Eclipse IDE for C++ Development Tools (CDT) in a Debian-based Docker image.**  
+**Eclipse Oxygen/Photon IDE for C++ Development Tools (CDT) in a Debian-based Docker image.**  
 
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 
 ____  
 
-**A Docker pre-built image is available from [ewsdocker/debian-eclipse-cpp](https://hub.docker.com/r/ewsdocker/debian-eclipse-cpp).**  
+**A pre-built Docker image is available from [ewsdocker/debian-eclipse-cpp](https://hub.docker.com/r/ewsdocker/debian-eclipse-cpp).**  
 
 ____  
 
@@ -60,11 +60,11 @@ After running the above command script, and using the settings indicated, the do
 
 + the executable scripts have been copied to **~/bin**;  
 + the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
-+ the associated **debian-eclipse-cpp-"branch"-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
++ the associated **debian-eclipse-cpp-"branch"-"version"** execution script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
 
 ____  
 
-**Executable scripts**  
+**Execution scripts**  
 
 **ewsdocker/debian-eclipse-cpp:photon-9.5.1**
   
@@ -151,7 +151,7 @@ optional step:
 
 To create and run the container, run **Eclipse CDT oxygen-9.5.2** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:oxygen-9.5.2  
+    ~/.local/bin/debian-eclipse-cpp:oxygen-9.5.2  
 
 ____  
 
