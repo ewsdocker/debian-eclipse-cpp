@@ -1,14 +1,15 @@
 # =========================================================================
 # =========================================================================
 #
-#	Dockerfile
-#	  Dockerfile for Eclipse IDE Photon with CDT
+#	debian-eclipse-cpp
+#
+#	  Dockerfile for Eclipse CDT Photon IDE 
 #		in a Debian docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version photon-9.5.1
+# @version 9.5.2-photon
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -37,7 +38,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.3
+FROM ewsdocker/debian-openjre:10-jre-9.5.4
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -64,7 +65,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.1"
+ENV LMSBUILD_VERSION="9.5.2-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
