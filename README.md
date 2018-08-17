@@ -24,7 +24,7 @@ The following scripts will download the the selected **ewsdocker/debian-eclipse-
 
 The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping)),  
 
-**ewsdocker/debian-eclipse-cpp:photon-9.5.2**  
+**ewsdocker/debian-eclipse-cpp:9.5.2-photon**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
@@ -33,11 +33,11 @@ The _default_ values will install all directories and contents in the **docker h
                -v ${HOME}/.config/docker:/conf \
                -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.2:/root \
                --name=debian-eclipse-cpp-photon-9.5.2 \
-           ewsdocker/debian-eclipse-cpp:photon-9.5.2 lms-setup  
+           ewsdocker/debian-eclipse-cpp:9.5.2-photon lms-setup  
 
 ____  
   
-**ewsdocker/debian-eclipse-cpp:oxygen-9.5.2**  
+**ewsdocker/debian-eclipse-cpp:9.5.2-oxygen**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
@@ -46,7 +46,7 @@ ____
                -v ${HOME}/.config/docker:/conf \
                -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.2:/root \
                --name=debian-eclipse-cpp-oxygen-9.5.2 \
-           ewsdocker/debian-eclipse-cpp:oxygen-9.5.2 lms-setup  
+           ewsdocker/debian-eclipse-cpp:9.5.2-oxygen lms-setup  
 
 ____  
 
@@ -66,7 +66,7 @@ ____
 
 **Execution scripts**  
 
-**ewsdocker/debian-eclipse-cpp:photon-9.5.2**
+**ewsdocker/debian-eclipse-cpp:9.5.2-photon**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -77,9 +77,9 @@ ____
                -v ${HOME}/git/ewsdocker:/project \
                -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.2:/root \
                --name=debian-eclipse-cpp-photon-9.5.2 \
-          ewsdocker/debian-eclipse-cpp:photon-9.5.2  
+          ewsdocker/debian-eclipse-cpp:9.5.2-photon  
 
-**ewsdocker/debian-eclipse-cpp:oxygen-9.5.2**
+**ewsdocker/debian-eclipse-cpp:9.5.2-oxygen**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -90,7 +90,7 @@ ____
                -v ${HOME}/git/ewsdocker:/project \
                -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.2:/root \
                --name=debian-eclipse-cpp-oxygen-9.5.2 \
-           ewsdocker/debian-eclipse-cpp:oxygen-9.5.2  
+           ewsdocker/debian-eclipse-cpp:9.5.2-oxygen  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
