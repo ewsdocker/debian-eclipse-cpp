@@ -97,70 +97,70 @@ Refer to [Mapping docker host resources to the docker container](https://github.
 
 ____  
 
-**Regarding photon-edge and oxygen-edge**  
+**Regarding edge-photon and edge-oxygen**  
 
 For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
 
 ____  
 
-**ewsdocker/debian-eclipse-cpp:photon-edge**  
+**ewsdocker/debian-eclipse-cpp:edge-photon**  
 
-**photon-edge** is the development tag for the **9.5.2** release tag.
+**edge-photon** is the development tag for the **9.5.2-photon** release tag.
 
-    docker pull ewsdocker/debian-eclipse-cpp:photon-edge
-    docker tag ewsdocker/debian-eclipse-cpp:photon-edge ewsdocker/debian-eclipse-cpp:photon-9.5.2
+    docker pull ewsdocker/debian-eclipse-cpp:edge-photon
+    docker tag ewsdocker/debian-eclipse-cpp:edge-photon ewsdocker/debian-eclipse-cpp:9.5.2-photon
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-cpp-photon-9.5.2:/root \
-               --name=debian-eclipse-cpp-photon-9.5.2 \
-           ewsdocker/debian-eclipse-cpp:photon-9.5.2 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.2-photon:/root \
+               --name=debian-eclipse-cpp-9.5.2-photon \
+           ewsdocker/debian-eclipse-cpp:9.5.2-photon lms-setup  
 
 optional step:
 
-    docker rmi ewsdocker/debian-eclipse-cpp:photon-edge  
+    docker rmi ewsdocker/debian-eclipse-cpp:edge-photon  
 
-To create and run the container, run **Eclipse CDT photon-9.5.2** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse CDT 9.5.2-Photon** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:photon-9.5.2  
+    ~/.local/bin/debian-eclipse-cpp:9.5.2-photon  
 
 ____  
 
-**ewsdocker/debian-eclipse-cpp:oxygen-edge**  
+**ewsdocker/debian-eclipse-cpp:edge-oxygen**  
 
-**oxygen-edge** is the development tag for the **9.5.2** release tag.
+**edge-oxygen** is the development tag for the **9.5.2-oxygen** release tag.
 
-    docker pull ewsdocker/debian-eclipse-cpp:oxygen-edge
-    docker tag ewsdocker/debian-eclipse-cpp:oxygen-edge ewsdocker/debian-eclipse-cpp:oxygen-9.5.2
+    docker pull ewsdocker/debian-eclipse-cpp:edge-oxygen
+    docker tag ewsdocker/debian-eclipse-cpp:edge-oxygen ewsdocker/debian-eclipse-cpp:9.5.2-oxygen
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-cpp-oxygen-9.5.2:/root \
-               --name=debian-eclipse-cpp-oxygen-9.5.2 \
-           ewsdocker/debian-eclipse-cpp:oxygen-9.5.2 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.2-oxygen:/root \
+               --name=debian-eclipse-cpp-9.5.2-oxygen \
+           ewsdocker/debian-eclipse-cpp:9.5.2-oxygen lms-setup  
 
 
 optional step:
 
-    docker rmi ewsdocker/debian-eclipse-cpp:oxygen-edge  
+    docker rmi ewsdocker/debian-eclipse-cpp:edge-oxygen  
   
 
-To create and run the container, run **Eclipse CDT oxygen-9.5.2** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse CDT 9.5.2-Oxygen** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-cpp:oxygen-9.5.2  
+    ~/.local/bin/debian-eclipse-cpp:9.5.2-oxygen  
 
 ____  
 
 **Persistence**  
 In order to persist the Eclipse application state, a location on the docker _host_ must be provided to store the necessary information.  This can be accomplished with the following volume option in the run command:
 
-    -v ${HOME}/.config/docker/debian-eclipse-cpp-"branch"-"version":/root  
+    -v ${HOME}/.config/docker/debian-eclipse-cpp-"version"-"branch":/root  
 
-Since the information is stored in the docker _container_ **/root** directory, this statement maps the user's **~/.config/docker/debian-eclipse-cpp-"branch"-"version"** docker _host_ directory to the **/root** directory in the docker _container_.  
+Since the information is stored in the docker _container_ **/root** directory, this statement maps the user's **~/.config/docker/debian-eclipse-cpp-"version"-"branch"** docker _host_ directory to the **/root** directory in the docker _container_.  
 ____  
 **Timestamps**  
 It is important to keep the time and date on docker _host_ files that have been created and/or modified by the docker _containter_ synchronized with the docker _host_'s settings. This can be accomplished as follows:
