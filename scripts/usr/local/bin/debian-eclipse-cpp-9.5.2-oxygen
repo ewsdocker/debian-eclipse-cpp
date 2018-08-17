@@ -2,7 +2,7 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-cpp-oxygen-9.5.1
+#	debian-eclipse-cpp-9.5.2-oxygen
 #	  Sample run script for ewsdocker/debian-eclipse-cpp
 #
 # =========================================================================
@@ -45,6 +45,6 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.config/docker/eclipse/cpp:/root \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-cpp-oxygen-9.5.1:/workspace \
-           --name=debian-eclipse-cpp-oxygen-9.5.1 \
-       ewsdocker/debian-eclipse-cpp:oxygen-9.5.1
+           -v /media/dev-2018/workspace-cpp-9.5.2-oxygen:/workspace \
+           --name=debian-eclipse-cpp-9.5.2-oxygen \
+       ewsdocker/debian-eclipse-cpp:9.5.2-oxygen
