@@ -80,7 +80,7 @@ RUN apt-get -y update \
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt 
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \
  && apt-get clean  
 
 # =========================================================================
