@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.2-oxygen
+# @version 9.5.3-oxygen
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:10-jre-9.5.4
+FROM ewsdocker/debian-openjre:10-jre-9.5.5
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -64,7 +64,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.2-${ECLIPSE_RELEASE}"
+ENV LMSBUILD_VERSION="9.5.3-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
@@ -74,6 +74,9 @@ ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
 RUN apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
+               libgtk-3-0 \
+               libgtk-3-bin \
+               libgtk-3-common \ 
                libwebkitgtk-3.0 \
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \

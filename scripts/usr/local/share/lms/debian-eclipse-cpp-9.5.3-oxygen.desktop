@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp:9.5.2-oxygen
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-eclipse-cpp-9.5.3-oxygen
 Icon=/home/jay/.local/share/icons/eclipse_oxygen-cdt.png
 Type=Application
 Terminal=false
-GenericName=Eclipse CDT 9.5.2 Oxygen
-Name=Eclipse CDT 9.5.2 Oxygen
+GenericName=Eclipse CDT 9.5.3 Oxygen
+Name=Eclipse CDT 9.5.3 Oxygen
 StartupNotify=false
 Categories=Development
