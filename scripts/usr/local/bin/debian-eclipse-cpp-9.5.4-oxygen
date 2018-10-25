@@ -2,7 +2,7 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-cpp-9.5.3-oxygen
+#	debian-eclipse-cpp-9.5.4-oxygen
 #	  Sample run script for ewsdocker/debian-eclipse-cpp
 #
 # =========================================================================
@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/eclipse/cpp:/root \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-cpp-9.5.3-oxygen:/workspace \
-           --name=debian-eclipse-cpp-9.5.3-oxygen \
-       ewsdocker/debian-eclipse-cpp:9.5.3-oxygen
+           -v ${HOME}/source:/source \
+           -v /media/dev-2018/workspace/eclipse/cpp/photon:/workspace \
+           -v ${HOME}/git/ewsdocker:/project \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.4-oxygen:/root \
+           --name=debian-eclipse-cpp-9.5.4-oxygen \
+       ewsdocker/debian-eclipse-cpp:9.5.4-oxygen
