@@ -24,6 +24,20 @@ The following scripts will download the the selected **ewsdocker/debian-eclipse-
 
 The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-cpp/wiki/QuickStart#mapping)),  
 
+**ewsdocker/debian-eclipse-cpp:latest**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -e LMSBUILD_VERSION="latest" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-latest:/root \
+               --name=debian-eclipse-cpp-latest \
+           ewsdocker/debian-eclipse-cpp lms-setup
+
+____  
+  
 **ewsdocker/debian-eclipse-cpp:9.5.4-photon**  
   
     docker run --rm \
@@ -65,6 +79,21 @@ After running the above command script, and using the settings indicated, the do
 ____  
 
 **Execution scripts**  
+
+**ewsdocker/debian-eclipse-cpp:latest**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v /media/dev-2018:/source \
+               -v /media/dev-2018/git/ewsdocker:/project \
+               -v /media/dev-2018/workspace/eclipse/cpp/latest:/workspace \
+               -v ${HOME}/.config/docker/debian-eclipse-cpp-latest:/root \
+               --name=debian-eclipse-cpp-latest \
+           ewsdocker/debian-eclipse-cpp  
+
+____  
 
 **ewsdocker/debian-eclipse-cpp:9.5.4-photon**
   
