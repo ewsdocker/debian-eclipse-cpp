@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-cpp-photon:/workspace \
            -v ${HOME}/.config/docker/debian-eclipse-cpp-latest:/root \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-latest/workspace:/workspace \
+           -v ${HOME}/Development:/Development \
+           -v ${HOME}/Source:/Source \
            --name=debian-eclipse-cpp-latest \
-       ewsdocker/debian-eclipse-cpp:latest
+       ewsdocker/debian-eclipse-cpp
