@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-eclipse-cpp:9.5.5
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-eclipse-cpp:9.6.0
 Icon=/home/jay/.local/share/icons/Cpp.png
 Type=Application
 Terminal=false
-GenericName=Eclipse Photon Cpp (9.5.5)
-Name=Eclipse Photon Cpp (9.5.5)
+GenericName=Eclipse Photon Cpp (9.6.0)
+Name=Eclipse Photon Cpp (9.6.0)
 StartupNotify=false
 Categories=Development

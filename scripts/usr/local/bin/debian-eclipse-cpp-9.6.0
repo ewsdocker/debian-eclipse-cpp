@@ -2,13 +2,13 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-cpp-9.5.5
+#	debian-eclipse-cpp-9.6.0
 #	  Sample run script for ewsdocker/debian-eclipse-cpp-photon
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5-photon
+# @version 9.6.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -42,12 +42,12 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.5:/root \
-           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.5/workspace:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.6.0:/root \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.6.0/workspace:/workspace \
            -v ${HOME}/Development:/Development \
            -v ${HOME}/Source:/Source \
-           --name=debian-eclipse-cpp-9.5.5 \
-       ewsdocker/debian-eclipse-cpp:9.5.5
+           --name=debian-eclipse-cpp-9.6.0 \
+       ewsdocker/debian-eclipse-cpp:9.6.0
        
        
        
