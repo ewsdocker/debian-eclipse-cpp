@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5-oxygen
+# @version 9.6.0-oxygen
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.9-gtk3
+FROM ewsdocker/debian-openjre:9.6.0-gtk3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -64,12 +64,12 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.5-${ECLIPSE_RELEASE}"
+ENV LMSBUILD_VERSION="9.6.0-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-openjre:9.5.9-gtk3"
+ENV LMSBUILD_PARENT="debian-openjre:9.6.0-gtk3"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
 

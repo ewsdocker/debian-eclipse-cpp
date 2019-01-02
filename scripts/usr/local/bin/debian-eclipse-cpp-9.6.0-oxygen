@@ -2,21 +2,21 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-cpp-9.5.5-oxygen
+#	debian-eclipse-cpp-9.6.0-oxygen
 #	  Sample run script for ewsdocker/debian-eclipse-cpp
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
-# @copyright © 2018. EarthWalk Software.
+# @version 9.6.0-oxygen
+# @copyright © 2018, 2019. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-cpp
 # @subpackage debian-eclipse-cpp
 #
 # =========================================================================
 #
-#	Copyright © 2018. EarthWalk Software
+#	Copyright © 2018, 2019. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
 #   This file is part of ewsdocker/debian-eclipse-cpp.
@@ -42,12 +42,12 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.5-oxygen:/root \
-           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.5.5-oxygen/workspace:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.6.0-oxygen:/root \
+           -v ${HOME}/.config/docker/debian-eclipse-cpp-9.6.0-oxygen/workspace:/workspace \
            -v ${HOME}/Development:/Development \
            -v ${HOME}/Source:/Source \
-           --name=debian-eclipse-cpp-9.5.5-oxygen \
-       ewsdocker/debian-eclipse-cpp:9.5.5-oxygen
+           --name=debian-eclipse-cpp-9.6.0-oxygen \
+       ewsdocker/debian-eclipse-cpp:9.6.0-oxygen
 
 
 
